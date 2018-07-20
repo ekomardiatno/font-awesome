@@ -13,5 +13,11 @@ $(document).ready(function(){
     b.select();
     document.execCommand("copy");
   })
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".col-icon").filter(function() {
+      $(this).toggle($(this).find('.icon-name').text().toLowerCase().indexOf(value) > -1)
+    });
+  });
   /*alert($('.icon-name').length)*/
 })
