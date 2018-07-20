@@ -1,0 +1,15 @@
+.col-icon{
+  position: relative;
+  text-align: center;
+}
+.icon {
+  font-size: 48px;
+  margin: 10px 0;
+}
+.icon-name{
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
