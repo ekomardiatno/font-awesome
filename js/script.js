@@ -4,10 +4,14 @@ $(document).ready(function(){
     a.before('<div class="col-xs-6 col-sm-3 col-md-2 col-icon">'+
              '<div class="icon"><i class="'+d+' fa-'+c+'"></i></div>'+
              '<div class="'+b+'">'+d+' fa-'+c+'</div>'+
-             '<input type="hidden" class="copy-icon" value="'+d+' fa'+c+'"/>'+
+             '<input type="text" class="copy-icon" value="'+d+' fa-'+c+'"/>'+
              '</div>');
     a.remove();
   })
-  
-  alert($('.icon-name').length)
+  $('.col-icon').on('click',function(){
+    var a = $(this), b = a.find('.copy-icon');
+    b.select();
+    document.execCommand("copy");
+  })
+  /*alert($('.icon-name').length)*/
 })
