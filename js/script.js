@@ -20,9 +20,11 @@ $(document).ready(function(){
   $('#myInput').on('keyup', function() {
     var value = $(this).val().toLowerCase();
     $('.col-cat').filter(function(){
-      $(this).toggle($(this).find('.icon-name').text().toLocaleLowerCase().indexOf(value) > -1);
-      $(this).find('.wrap-icon').filter(function(){
-        $(this).toggle($(this).find('.icon-name').text().toLocaleLowerCase().indexOf(value) > -1);
+      var a = $(this), b = a.find('.icon-name'), c = a.find('.wrap-icon');
+      a.toggle(b.text().toLocaleLowerCase().indexOf(value) > -1);
+      c.filter(function(){
+        var a = $(this), b = a.find('.icon-name');
+        a.toggle(b.text().toLocaleLowerCase().indexOf(value) > -1);
       })
     })
   });
