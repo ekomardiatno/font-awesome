@@ -20,12 +20,12 @@ $(document).ready(function(){
   $('#myInput').on('keyup', function() {
     var value = $(this).val().toLowerCase();
     $('.col-cat').filter(function(){
-      var a = $(this), b = a.find('.icon-name'), c = a.find('.wrap-icon');
+      var a = $(this), b = a.find('.icon-name');
       a.toggle(b.text().toLocaleLowerCase().indexOf(value) > -1);
-      c.filter(function(){
-        var a = $(this), b = a.find('.icon-name');
-        a.toggle(b.text().toLocaleLowerCase().indexOf(value) > -1);
-      })
+    })
+    $('.wrap-icon').filter(function(){
+      var a = $(this), b = a.find('.icon-name');
+      a.toggle(b.text().toLocaleLowerCase().indexOf(value) > -1);
     })
   });
   
