@@ -4,7 +4,7 @@ $(document).ready(function(){
     a.before('<div class="col-xs-4 col-sm-3 col-md-2 wrap-icon">'+
              '<div class="col-icon">'+
              '<div class="icon"><i class="'+d+' fa-'+c+'"></i></div>'+
-             '<div class="icon-name">'+d+' fa-'+c+'</div>'+
+             '<div class="icon-name">'+c+'</div>'+
              '<input type="text" class="copy-icon" value="'+d+' fa-'+c+'"/>'+
              '</div>'+
              '</div>');
@@ -17,11 +17,14 @@ $(document).ready(function(){
     document.execCommand("copy");
   });
   
-  $("#myInput").on("keyup", function() {
+  $('#myInput').on('keyup', function() {
     var value = $(this).val().toLowerCase();
-    $(".wrap-icon").filter(function() {
-      $(this).toggle($(this).find('.icon-name').text().toLowerCase().indexOf(value) > -1)
-    });
+    $('.col-cat').filter(function(){
+      $(this).toggle($(this).find('.icon-name').text().toLocaleLowerCase().indexOf(value) > -1);
+      $(this).find('.wrap-icon').filter(function(){
+        $(this).toggle($(this).find('.icon-name').text().toLocaleLowerCase().indexOf(value) > -1);
+      })
+    })
   });
   
   /*alert($('.icon-name').length)*/
