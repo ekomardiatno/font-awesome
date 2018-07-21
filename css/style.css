@@ -1,10 +1,38 @@
+body{
+  font-family: "Google Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.15;
+  background: #f9f9fa;
+}
+h1{
+  font-family: "Museo", sans-serif;
+  font-weight: 700;
+}
 .col-icon{
   position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
   text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .35s;
 }
-.icon {
+.col-icon:hover{
+  background: #fff;
+  box-shadow: 1px 2px 5px rgba(0,0,0,.2);
+}
+.icon{
   font-size: 48px;
-  margin: 10px 0;
+  padding: 10px;
+  color: #495057;
+  transition: all .35s;
+}
+.icon:hover{
+  background: #4dabf7;
+  color: #fff;
 }
 .icon-name{
   display: block;
@@ -12,6 +40,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #adb5bd;
+  font-size: 13px;
+  padding: 8px;
 }
 .copy-icon{
   padding: 0;
